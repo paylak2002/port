@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		header,footer{
+			height: 100px;
+			width: 100%;
+			border:solid green;
+		}
+		.content{
+			height: 400px;
+			border:solid red;
+		}
+	</style>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+	</header>
+	<div class="content">
+		<input type="text" id="textMS">
+		<button class="btn">DONE</button>
+		<p id="ms">
+			
+		</p>
+	</div>
+	<footer></footer>
+	<script type="text/javascript">
+		$(document).ready(()=>{
+			$('.btn').click(()=>{
+				$.ajax({ 
+		           url: '/',
+		           type: 'POST',
+		           cache: false, 
+		           data: { text:$('#textMS').val()}, 
+		           success: function(data){
+		              
+		           }
+		        })
+			})
+		})
+	</script>
+</body>
+</html>
